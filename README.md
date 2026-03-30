@@ -52,6 +52,10 @@ The system continuously updates the following performance metrics:
 
 
 ---
+🔗 Live Demo
+
+Try the live version of the Reaction Time Lab here:https://hci-cg-reaction-time-lab-git-main-neharehan2005s-projects.vercel.app/
+
 
 ## ⚙️ Technologies Used
 
