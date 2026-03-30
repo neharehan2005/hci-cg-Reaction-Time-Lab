@@ -46,7 +46,7 @@ The system continuously updates the following performance metrics:
 
 * **Trials** → Total number of attempts
 * **Correct Responses** → Number of correct inputs
-* * **Accuracy** →Track accuracy and performance over multiple trials
+* **Accuracy** →Track accuracy and performance over multiple trials
 * **Average Reaction Time (Avg RT)** → Mean reaction time across trials
 * **Last Reaction Time** → Reaction time of the most recent input
 
