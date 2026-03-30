@@ -129,21 +129,27 @@ export default function App() {
       scene.remove(s.falling);
       s.falling = null;
 
-      // update stats
-      s.sumRT += rt;
-
+     
+      if (correct) {
+        s.sumRT += rt;
+      }
+       
+       // update stats
       setStats((prev) => {
         const trials = prev.trials + 1;
         const correctCount = prev.correct + (correct ? 1 : 0);
-
+        const accuracy=Math.round((correctCount/trials)*100);
         return {
           trials,
           correct: correctCount,
-          avgRT: Math.round(s.sumRT / trials),
+          avgRT: correctCount > 0 ? Math.round(s.sumRT / correctCount) : 0,
           lastRT: rt,
+          accuracy,
+          
         };
       });
 
+      
       // next spawn
       setTimeout(spawn, 400);
     };
@@ -167,6 +173,7 @@ export default function App() {
         <div style={styles.panel}>
           <p>Trials: {stats.trials}</p>
           <p>Correct: {stats.correct}</p>
+          <p>Accuracy:{stats.accuracy ? stats.accuracy + "%" : "0%"}</p>
           <p>Avg RT: {stats.avgRT} ms</p>
           <p>Last RT: {stats.lastRT} ms</p>
         </div>
@@ -222,6 +229,6 @@ const styles = {
     boxShadow: "0 0 10px rgba(0,229,255,0.2)",
   },
 
-  
+
 };
 
