@@ -35,6 +35,7 @@ The goal of this experiment is to:
 
    * Reaction time (in milliseconds)
    * Whether the response was correct or incorrect
+   * Accuracy(in %)
 5. A new object appears after each trial.
 
 ---
@@ -45,8 +46,10 @@ The system continuously updates the following performance metrics:
 
 * **Trials** → Total number of attempts
 * **Correct Responses** → Number of correct inputs
+* * **Accuracy** →Track accuracy and performance over multiple trials
 * **Average Reaction Time (Avg RT)** → Mean reaction time across trials
 * **Last Reaction Time** → Reaction time of the most recent input
+
 
 ---
 
@@ -84,19 +87,18 @@ This is implemented using `performance.now()` for high precision timing.
 
 ## 🔄 System Flow
 
-1. Spawn object
+1. Spawn object/Generate random object(letter/number)
 2. Start timer
 3. Wait for user input
 4. Calculate reaction time
 5. Update statistics
-6. Spawn next object
+6. Spawn next objec/tGenerate next random object(letter/number
 
 ---
 
 ## ⚠️ Current Limitations
 
 * Missed objects (no key press) are not counted as trials
-* Average reaction time includes incorrect responses
 * No data export (CSV) for further analysis
 
 ---
@@ -104,7 +106,6 @@ This is implemented using `performance.now()` for high precision timing.
 ## 🚀 Future Improvements
 
 * Add **CSV export** for experiment data
-* Include **accuracy percentage**
 * Implement **difficulty scaling** (increase falling speed)
 * Add **sound feedback**
 * Support **multiple input modes**
